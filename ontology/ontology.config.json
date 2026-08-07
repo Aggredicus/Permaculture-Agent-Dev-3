@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "modelName": "SELF_MODEL",
+  "repository": "Aggredicus/Permaculture-Agent-Dev-3",
+  "rootLabel": "Permaculture Agent Skill Library",
+  "rootFiles": [
+    "README.md",
+    "AGENTS.md"
+  ],
+  "scanRoots": [
+    "skills",
+    "docs",
+    "scripts",
+    ".github/workflows",
+    "ontology"
+  ],
+  "exclude": [
+    "ontology/SELF_MODEL.json",
+    "ontology/SELF_MODEL.graphml"
+  ]
+}
