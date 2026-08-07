@@ -1,0 +1,55 @@
+{
+  "nodes": [
+    [
+      "concept:project-audit-contract",
+      "concept",
+      "Target project audit contract",
+      ""
+    ],
+    [
+      "concept:repository-self-model",
+      "concept",
+      "Repository self-model",
+      ""
+    ],
+    [
+      "concept:web-application",
+      "concept",
+      "Web application",
+      ""
+    ],
+    [
+      "legacy:permaculture-design-agent-core",
+      "legacy",
+      "Permaculture Design Agent Core",
+      "AGENT.md"
+    ]
+  ],
+  "edges": [
+    [
+      "repo",
+      "contains",
+      "legacy:permaculture-design-agent-core"
+    ],
+    [
+      "skill:web-security-quality-audit",
+      "audits",
+      "concept:web-application"
+    ],
+    [
+      "skill:web-security-quality-audit",
+      "reads",
+      "concept:project-audit-contract"
+    ],
+    [
+      "file:scripts/build-ontology.mjs",
+      "generates",
+      "concept:repository-self-model"
+    ],
+    [
+      "file:.github/workflows/validate-library.yml",
+      "validates",
+      "concept:repository-self-model"
+    ]
+  ]
+}
