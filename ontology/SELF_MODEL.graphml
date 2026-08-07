@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+  <key id="kind" for="node" attr.name="kind" attr.type="string"/>
+  <key id="label" for="node" attr.name="label" attr.type="string"/>
+  <key id="path" for="node" attr.name="path" attr.type="string"/>
+  <key id="relation" for="edge" attr.name="relation" attr.type="string"/>
+  <key id="fingerprint" for="graph" attr.name="fingerprint" attr.type="string"/>
+  <graph id="SELF_MODEL" edgedefault="directed">
+    <data key="fingerprint">5475e5e82c88e832f294</data>
+    <node id="concept:project-audit-contract"><data key="kind">concept</data><data key="label">Target project audit contract</data></node>
+    <node id="concept:repository-self-model"><data key="kind">concept</data><data key="label">Repository self-model</data></node>
+    <node id="concept:web-application"><data key="kind">concept</data><data key="label">Web application</data></node>
+    <node id="file:.github/workflows/validate-library.yml"><data key="kind">workflow</data><data key="label">validate-library.yml</data><data key="path">.github/workflows/validate-library.yml</data></node>
+    <node id="file:AGENTS.md"><data key="kind">repository-instructions</data><data key="label">AGENTS.md</data><data key="path">AGENTS.md</data></node>
+    <node id="file:docs/skills-architecture.md"><data key="kind">documentation</data><data key="label">skills-architecture.md</data><data key="path">docs/skills-architecture.md</data></node>
+    <node id="file:ontology/ontology.config.json"><data key="kind">ontology-source</data><data key="label">ontology.config.json</data><data key="path">ontology/ontology.config.json</data></node>
+    <node id="file:ontology/README.md"><data key="kind">ontology-source</data><data key="label">README.md</data><data key="path">ontology/README.md</data></node>
+    <node id="file:ontology/semantics.json"><data key="kind">ontology-source</data><data key="label">semantics.json</data><data key="path">ontology/semantics.json</data></node>
+    <node id="file:README.md"><data key="kind">documentation</data><data key="label">README.md</data><data key="path">README.md</data></node>
+    <node id="file:scripts/build-ontology.mjs"><data key="kind">script</data><data key="label">build-ontology.mjs</data><data key="path">scripts/build-ontology.mjs</data></node>
+    <node id="file:scripts/validate-library.mjs"><data key="kind">script</data><data key="label">validate-library.mjs</data><data key="path">scripts/validate-library.mjs</data></node>
+    <node id="file:skills/web-security-quality-audit/assets/audit.config.example.json"><data key="kind">skill-file</data><data key="label">audit.config.example.json</data><data key="path">skills/web-security-quality-audit/assets/audit.config.example.json</data></node>
+    <node id="file:skills/web-security-quality-audit/assets/report-template.md"><data key="kind">skill-file</data><data key="label">report-template.md</data><data key="path">skills/web-security-quality-audit/assets/report-template.md</data></node>
+    <node id="file:skills/web-security-quality-audit/references/control-catalog.md"><data key="kind">skill-file</data><data key="label">control-catalog.md</data><data key="path">skills/web-security-quality-audit/references/control-catalog.md</data></node>
+    <node id="file:skills/web-security-quality-audit/references/severity-rubric.md"><data key="kind">skill-file</data><data key="label">severity-rubric.md</data><data key="path">skills/web-security-quality-audit/references/severity-rubric.md</data></node>
+    <node id="file:skills/web-security-quality-audit/references/target-contract.md"><data key="kind">skill-file</data><data key="label">target-contract.md</data><data key="path">skills/web-security-quality-audit/references/target-contract.md</data></node>
+    <node id="file:skills/web-security-quality-audit/SKILL.md"><data key="kind">skill-file</data><data key="label">SKILL.md</data><data key="path">skills/web-security-quality-audit/SKILL.md</data></node>
+    <node id="file:skills/web-security-quality-audit/VERSION"><data key="kind">skill-file</data><data key="label">VERSION</data><data key="path">skills/web-security-quality-audit/VERSION</data></node>
+    <node id="legacy:permaculture-design-agent-core"><data key="kind">legacy</data><data key="label">Permaculture Design Agent Core</data><data key="path">AGENT.md</data></node>
+    <node id="repo"><data key="kind">repository</data><data key="label">Permaculture Agent Skill Library</data></node>
+    <node id="skill:web-security-quality-audit"><data key="kind">skill</data><data key="label">web-security-quality-audit</data><data key="path">skills/web-security-quality-audit</data></node>
+    <edge id="e1" source="file:.github/workflows/validate-library.yml" target="concept:repository-self-model"><data key="relation">validates</data></edge>
+    <edge id="e2" source="file:scripts/build-ontology.mjs" target="concept:repository-self-model"><data key="relation">generates</data></edge>
+    <edge id="e3" source="repo" target="file:.github/workflows/validate-library.yml"><data key="relation">contains</data></edge>
+    <edge id="e4" source="repo" target="file:AGENTS.md"><data key="relation">contains</data></edge>
+    <edge id="e5" source="repo" target="file:docs/skills-architecture.md"><data key="relation">contains</data></edge>
+    <edge id="e6" source="repo" target="file:ontology/ontology.config.json"><data key="relation">contains</data></edge>
+    <edge id="e7" source="repo" target="file:ontology/README.md"><data key="relation">contains</data></edge>
+    <edge id="e8" source="repo" target="file:ontology/semantics.json"><data key="relation">contains</data></edge>
+    <edge id="e9" source="repo" target="file:README.md"><data key="relation">contains</data></edge>
+    <edge id="e10" source="repo" target="file:scripts/build-ontology.mjs"><data key="relation">contains</data></edge>
+    <edge id="e11" source="repo" target="file:scripts/validate-library.mjs"><data key="relation">contains</data></edge>
+    <edge id="e12" source="repo" target="legacy:permaculture-design-agent-core"><data key="relation">contains</data></edge>
+    <edge id="e13" source="repo" target="skill:web-security-quality-audit"><data key="relation">contains</data></edge>
+    <edge id="e14" source="skill:web-security-quality-audit" target="concept:web-application"><data key="relation">audits</data></edge>
+    <edge id="e15" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/assets/audit.config.example.json"><data key="relation">contains</data></edge>
+    <edge id="e16" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/assets/report-template.md"><data key="relation">contains</data></edge>
+    <edge id="e17" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/references/control-catalog.md"><data key="relation">contains</data></edge>
+    <edge id="e18" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/references/severity-rubric.md"><data key="relation">contains</data></edge>
+    <edge id="e19" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/references/target-contract.md"><data key="relation">contains</data></edge>
+    <edge id="e20" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/SKILL.md"><data key="relation">contains</data></edge>
+    <edge id="e21" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/VERSION"><data key="relation">contains</data></edge>
+    <edge id="e22" source="skill:web-security-quality-audit" target="concept:project-audit-contract"><data key="relation">reads</data></edge>
+  </graph>
+</graphml>

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "project": {
+    "name": "Example Web App",
+    "repository": "owner/repository",
+    "defaultBranch": "main",
+    "runtime": "document the runtime",
+    "liveBaseUrl": null
+  },
+  "commands": {
+    "lockedInstall": "project-specific",
+    "staticSecurity": "project-specific",
+    "projectAudit": "optional",
+    "typecheck": "project-specific",
+    "build": "project-specific",
+    "productionAudit": "project-specific",
+    "fullDependencyReport": "project-specific"
+  },
+  "routes": ["/"],
+  "requiredCiChecks": [],
+  "thirdPartyIntegrations": [],
+  "trackedRisks": [],
+  "liveSmokeTests": []
+}
