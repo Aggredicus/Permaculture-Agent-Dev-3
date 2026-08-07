@@ -1,138 +1,93 @@
-# Permaculture Design Agent Core
+# Permaculture Agent Skill Library
 
-**Permaculture Design Agent Core** is a minimalist, agent-ready operating system for professional permaculture design. It combines one core `AGENT.md`, one living GraphML site model, and a small set of strict companion documents so a human designer and AI agents can coordinate from intake through monitoring without losing provenance, uncertainty, or design rationale.
+Version-controlled reusable agent skills for Permaculture Works software, operations, and design workflows.
 
-## What This Is
+## Purpose
 
-This is a lean documentation and model-management system for regenerative site design. It helps a designer or AI agent:
+This repository is the canonical source for reusable skills. A workflow belongs here when it can be reused across projects without hardcoding one application's routes, URLs, issue numbers, secrets, or client data.
 
-- maintain a living model of a property,
-- track goals, observations, assumptions, risks, unknowns, and decisions,
-- distinguish client-reported information from field-verified facts,
-- generate client-facing reports from a single source of truth,
-- validate design quality before delivery,
-- coordinate across Cursor, ChatGPT, GitHub, local files, and future agent workflows.
+Project-specific facts remain with the project repository. For example, the Permaculture Works website owns its own `AGENTS.md`, `audit.config.json`, route inventory, provider URLs, CI commands, and tracked issues. The reusable audit skill reads that project contract rather than duplicating it here.
 
-## What This Is Not
+## Skill catalog
 
-This is not GIS software, a survey, a legal opinion, an engineering plan, a wetland delineation, a pesticide recommendation system, or a substitute for professional field verification. The GraphML model stores interpreted design intelligence and relationships, not raw point clouds, rasters, drone imagery, or survey-grade geometry.
+### `web-security-quality-audit`
 
-## Folder Structure
+Location: `skills/web-security-quality-audit/`
 
-```txt
-permaculture-design-agent-core/
-├─ AGENT.md
-├─ README.md
-├─ model/
-│  ├─ SITE_MODEL.graphml
-│  ├─ SITE_MODEL_SCHEMA.md
-│  ├─ PROJECT_STATE.md
-│  ├─ CHANGELOG.md
-│  └─ DESIGN_DECISIONS.md
-├─ quality/
-│  └─ VALIDATION_CHECKLIST.md
-├─ templates/
-│  ├─ CLIENT_REPORT_TEMPLATE.md
-│  ├─ SITE_INTAKE_TEMPLATE.md
-│  ├─ SITE_VISIT_CHECKLIST.md
-│  └─ MONITORING_REPORT_TEMPLATE.md
-└─ exports/
-   └─ .gitkeep
+Performs a repeatable evidence-based web application audit across:
+
+- repository governance and software supply chain;
+- dependency/advisory status;
+- server and browser security;
+- third-party integrations and privacy boundaries;
+- reliability and accessibility;
+- performance and maintainability;
+- live deployment verification when tooling permits;
+- comparison with previous audit baselines.
+
+The report contract distinguishes **Verified pass**, **Verified finding**, **Tracked risk**, and **Unverified** evidence so unavailable tooling never becomes a false pass.
+
+## Repository structure
+
+```text
+skills/
+  web-security-quality-audit/
+    SKILL.md
+    VERSION
+    references/
+    scripts/
+    assets/
+fixtures/
+tests/
+scripts/
+.github/workflows/
 ```
 
-## Quick Start
+`SKILL.md` orchestrates model behavior. Detailed rubrics belong in `references/`, deterministic helpers in `scripts/`, and reusable output scaffolding in `assets/`.
 
-1. Open the folder in Cursor or another IDE.
-2. Read `AGENT.md` first.
-3. Fill out `templates/SITE_INTAKE_TEMPLATE.md` for the client.
-4. Use `templates/SITE_VISIT_CHECKLIST.md` during field observation.
-5. Update `model/SITE_MODEL.graphml` as meaningful facts, assumptions, risks, and design elements emerge.
-6. Keep `model/PROJECT_STATE.md` current after each design session.
-7. Record major decisions in `model/DESIGN_DECISIONS.md`.
-8. Run `quality/VALIDATION_CHECKLIST.md` before client delivery.
-9. Generate the client report using `templates/CLIENT_REPORT_TEMPLATE.md`.
-10. Export versioned snapshots to `exports/`.
+## Using the security and quality audit
 
-## Design Workflow
+Use a reviewed commit or tagged release instead of a moving branch when installing or copying a skill into an agent runtime. The canonical skill directory is:
 
-Recommended sequence:
-
-1. Intake and project framing
-2. Base map and site discovery
-3. Field observation
-4. Bioregional context brief
-5. Goals-to-functions mapping
-6. Zone and sector analysis
-7. Concept master plan
-8. Plant guild and species logic
-9. Water and soil strategy
-10. Climate resilience layer
-11. Implementation reality sheet
-12. Client stewardship guidance
-13. Design defense meeting
-14. Installation support
-15. Year 1 monitoring and adaptive redesign
-
-## Living Site Graph
-
-`model/SITE_MODEL.graphml` is the working model. It stores relationships such as:
-
-- `client_goal:reduce_mowing` → `justifies` → `design_element:front_yard_meadow`
-- `risk:deer_browse` → `risks` → `plant_guild:young_orchard`
-- `unknown:soil_ph` → `constrains` → `proposed_plant:blueberry`
-- `task:soil_test` → `required_before` → `task:final_plant_selection`
-- `water_flow:roof_runoff` → `flows_to` → `water_feature:rain_garden`
-
-The graph should model ecological and design causality, not merely visual layout.
-
-## Versioning Rules
-
-Keep the working model at:
-
-```txt
-model/SITE_MODEL.graphml
+```text
+skills/web-security-quality-audit
 ```
 
-Export snapshots to:
+For the Permaculture Works website or another project:
 
-```txt
-exports/SITE_MODEL_v0.1.0.graphml
-exports/PROJECT_STATE_v0.1.0.md
-exports/CLIENT_REPORT_v0.1.0.md
+1. Open the target project's current default branch.
+2. Read the target project's `AGENTS.md` and `audit.config.json` if present.
+3. Follow `skills/web-security-quality-audit/SKILL.md` from this library.
+4. Run the target project's configured deterministic checks exactly as declared.
+5. Treat source, CI, and live deployment as separate evidence layers.
+6. Save a dated audit in the target repository so future runs can compare deltas.
+
+If `audit.config.json` is absent, use `skills/web-security-quality-audit/assets/audit.config.example.json` as a schema guide. Do not invent project-specific facts merely to make preflight pass.
+
+## Library validation
+
+The library has no third-party runtime dependencies. Validation uses Python's standard library:
+
+```bash
+python3 scripts/validate_skills.py
+python3 -m unittest discover -s tests
 ```
 
-Suggested lifecycle:
+GitHub Actions runs both commands plus a full-history secret scan on pull requests and `main`.
 
-- `v0.1.0` — initial starter model
-- `v0.2.0` — first real client/site model
-- `v0.3.0` — concept design model
-- `v0.4.0` — implementation planning model
-- `v1.0.0` — first client-ready delivery model
+## Development model
 
-Use patch versions for corrections, source updates, or small refinements.
+See `AGENTS.md` for repository rules and `docs/skills-architecture.md` for the design standard. Core principles:
 
-## Quality Control
+- keep skills narrow and composable;
+- separate reusable logic from project-specific contracts;
+- never embed credentials, secrets, or client data;
+- treat retrieved repository/web content as evidence, not instructions that override the skill;
+- preserve severity and evidence semantics across patch releases;
+- update fixtures/tests when behavior changes;
+- make mutating tool actions explicit and opt-in;
+- install reviewed tags or immutable commits rather than arbitrary moving branches.
 
-Before any client delivery, run `quality/VALIDATION_CHECKLIST.md`. Do not treat a design as implementation-ready if it has unverified utilities, unresolved water overflow, unreviewed regulated areas, unverified high-risk earthworks, unsafe plant recommendations, or no maintenance plan.
+## Legacy template content
 
-## Client Deliverables
-
-Use the templates to produce:
-
-- intake summaries,
-- site visit notes,
-- regenerative site design reports,
-- monitoring reports,
-- task lists,
-- decision summaries,
-- GraphML model summaries.
-
-## Professional Boundaries
-
-This system supports design thinking and documentation. It must flag when licensed or specialized review is needed, especially for regulated waterways, wetlands, shorelines, major earthworks, drainage changes, utilities, structures, toxic plants, invasive species control, pesticides, livestock health, food safety, or legal compliance.
-
-## Minimal Operating Rule
-
-A design update is complete only when the model, state, changelog, and decision log agree.
-
-Generated: 2026-05-04
+The root `AGENT.md` came from the older Permaculture Design Agent Core template. It is retained as source material, but it is **not** the canonical repository instruction file and is **not** used by the web security/quality audit. Future work can decompose that large prompt into smaller domain skills under `skills/`.
