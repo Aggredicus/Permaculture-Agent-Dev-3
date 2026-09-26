@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:landscape-digital-twin:layer-result:v0.1.0",
+  "title": "Landscape Analysis Layer",
+  "type": "object",
+  "required": ["id", "name", "category", "source_type", "dependencies", "algorithm", "provenance", "confidence"],
+  "properties": {
+    "id": {"type": "string"},
+    "name": {"type": "string"},
+    "category": {"type": "string"},
+    "source_type": {"enum": ["raster", "vector", "mesh", "pointcloud", "timeseries"]},
+    "units": {"type": ["string", "null"]},
+    "resolution": {"type": ["string", "null"]},
+    "dependencies": {"type": "array", "items": {"type": "string"}},
+    "algorithm": {"type": "string"},
+    "algorithm_version": {"type": "string"},
+    "parameters": {"type": "object"},
+    "provenance": {"type": "array", "items": {"type": "object"}},
+    "confidence": {"enum": ["high", "medium", "low"]},
+    "caveats": {"type": "array", "items": {"type": "string"}}
+  }
+}
