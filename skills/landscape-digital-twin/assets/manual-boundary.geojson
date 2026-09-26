@@ -1,0 +1,17 @@
+{
+  "type": "Feature",
+  "properties": {
+    "name": "Example adjustable AOI",
+    "analysis_buffer_m": 100
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [[
+      [-85.6690, 42.9628],
+      [-85.6672, 42.9628],
+      [-85.6672, 42.9640],
+      [-85.6690, 42.9640],
+      [-85.6690, 42.9628]
+    ]]
+  }
+}
