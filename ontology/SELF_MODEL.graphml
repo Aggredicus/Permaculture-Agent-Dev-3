@@ -6,7 +6,7 @@
   <key id="relation" for="edge" attr.name="relation" attr.type="string"/>
   <key id="fingerprint" for="graph" attr.name="fingerprint" attr.type="string"/>
   <graph id="SELF_MODEL" edgedefault="directed">
-    <data key="fingerprint">5475e5e82c88e832f294</data>
+    <data key="fingerprint">2e3dee8783ff6a419034</data>
     <node id="concept:project-audit-contract"><data key="kind">concept</data><data key="label">Target project audit contract</data></node>
     <node id="concept:repository-self-model"><data key="kind">concept</data><data key="label">Repository self-model</data></node>
     <node id="concept:web-application"><data key="kind">concept</data><data key="label">Web application</data></node>
@@ -19,6 +19,16 @@
     <node id="file:README.md"><data key="kind">documentation</data><data key="label">README.md</data><data key="path">README.md</data></node>
     <node id="file:scripts/build-ontology.mjs"><data key="kind">script</data><data key="label">build-ontology.mjs</data><data key="path">scripts/build-ontology.mjs</data></node>
     <node id="file:scripts/validate-library.mjs"><data key="kind">script</data><data key="label">validate-library.mjs</data><data key="path">scripts/validate-library.mjs</data></node>
+    <node id="file:skills/landscape-digital-twin/assets/layer-result.schema.json"><data key="kind">skill-file</data><data key="label">layer-result.schema.json</data><data key="path">skills/landscape-digital-twin/assets/layer-result.schema.json</data></node>
+    <node id="file:skills/landscape-digital-twin/assets/manual-boundary.geojson"><data key="kind">skill-file</data><data key="label">manual-boundary.geojson</data><data key="path">skills/landscape-digital-twin/assets/manual-boundary.geojson</data></node>
+    <node id="file:skills/landscape-digital-twin/assets/site-request.example.json"><data key="kind">skill-file</data><data key="label">site-request.example.json</data><data key="path">skills/landscape-digital-twin/assets/site-request.example.json</data></node>
+    <node id="file:skills/landscape-digital-twin/assets/site-request.schema.json"><data key="kind">skill-file</data><data key="label">site-request.schema.json</data><data key="path">skills/landscape-digital-twin/assets/site-request.schema.json</data></node>
+    <node id="file:skills/landscape-digital-twin/references/acceptance-tests.md"><data key="kind">skill-file</data><data key="label">acceptance-tests.md</data><data key="path">skills/landscape-digital-twin/references/acceptance-tests.md</data></node>
+    <node id="file:skills/landscape-digital-twin/references/architecture.md"><data key="kind">skill-file</data><data key="label">architecture.md</data><data key="path">skills/landscape-digital-twin/references/architecture.md</data></node>
+    <node id="file:skills/landscape-digital-twin/references/changelog.md"><data key="kind">skill-file</data><data key="label">changelog.md</data><data key="path">skills/landscape-digital-twin/references/changelog.md</data></node>
+    <node id="file:skills/landscape-digital-twin/references/layer-catalog.md"><data key="kind">skill-file</data><data key="label">layer-catalog.md</data><data key="path">skills/landscape-digital-twin/references/layer-catalog.md</data></node>
+    <node id="file:skills/landscape-digital-twin/SKILL.md"><data key="kind">skill-file</data><data key="label">SKILL.md</data><data key="path">skills/landscape-digital-twin/SKILL.md</data></node>
+    <node id="file:skills/landscape-digital-twin/VERSION"><data key="kind">skill-file</data><data key="label">VERSION</data><data key="path">skills/landscape-digital-twin/VERSION</data></node>
     <node id="file:skills/web-security-quality-audit/assets/audit.config.example.json"><data key="kind">skill-file</data><data key="label">audit.config.example.json</data><data key="path">skills/web-security-quality-audit/assets/audit.config.example.json</data></node>
     <node id="file:skills/web-security-quality-audit/assets/report-template.md"><data key="kind">skill-file</data><data key="label">report-template.md</data><data key="path">skills/web-security-quality-audit/assets/report-template.md</data></node>
     <node id="file:skills/web-security-quality-audit/references/control-catalog.md"><data key="kind">skill-file</data><data key="label">control-catalog.md</data><data key="path">skills/web-security-quality-audit/references/control-catalog.md</data></node>
@@ -28,6 +38,7 @@
     <node id="file:skills/web-security-quality-audit/VERSION"><data key="kind">skill-file</data><data key="label">VERSION</data><data key="path">skills/web-security-quality-audit/VERSION</data></node>
     <node id="legacy:permaculture-design-agent-core"><data key="kind">legacy</data><data key="label">Permaculture Design Agent Core</data><data key="path">AGENT.md</data></node>
     <node id="repo"><data key="kind">repository</data><data key="label">Permaculture Agent Skill Library</data></node>
+    <node id="skill:landscape-digital-twin"><data key="kind">skill</data><data key="label">landscape-digital-twin</data><data key="path">skills/landscape-digital-twin</data></node>
     <node id="skill:web-security-quality-audit"><data key="kind">skill</data><data key="label">web-security-quality-audit</data><data key="path">skills/web-security-quality-audit</data></node>
     <edge id="e1" source="file:.github/workflows/validate-library.yml" target="concept:repository-self-model"><data key="relation">validates</data></edge>
     <edge id="e2" source="file:scripts/build-ontology.mjs" target="concept:repository-self-model"><data key="relation">generates</data></edge>
@@ -41,15 +52,26 @@
     <edge id="e10" source="repo" target="file:scripts/build-ontology.mjs"><data key="relation">contains</data></edge>
     <edge id="e11" source="repo" target="file:scripts/validate-library.mjs"><data key="relation">contains</data></edge>
     <edge id="e12" source="repo" target="legacy:permaculture-design-agent-core"><data key="relation">contains</data></edge>
-    <edge id="e13" source="repo" target="skill:web-security-quality-audit"><data key="relation">contains</data></edge>
-    <edge id="e14" source="skill:web-security-quality-audit" target="concept:web-application"><data key="relation">audits</data></edge>
-    <edge id="e15" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/assets/audit.config.example.json"><data key="relation">contains</data></edge>
-    <edge id="e16" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/assets/report-template.md"><data key="relation">contains</data></edge>
-    <edge id="e17" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/references/control-catalog.md"><data key="relation">contains</data></edge>
-    <edge id="e18" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/references/severity-rubric.md"><data key="relation">contains</data></edge>
-    <edge id="e19" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/references/target-contract.md"><data key="relation">contains</data></edge>
-    <edge id="e20" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/SKILL.md"><data key="relation">contains</data></edge>
-    <edge id="e21" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/VERSION"><data key="relation">contains</data></edge>
-    <edge id="e22" source="skill:web-security-quality-audit" target="concept:project-audit-contract"><data key="relation">reads</data></edge>
+    <edge id="e13" source="repo" target="skill:landscape-digital-twin"><data key="relation">contains</data></edge>
+    <edge id="e14" source="repo" target="skill:web-security-quality-audit"><data key="relation">contains</data></edge>
+    <edge id="e15" source="skill:landscape-digital-twin" target="file:skills/landscape-digital-twin/assets/layer-result.schema.json"><data key="relation">contains</data></edge>
+    <edge id="e16" source="skill:landscape-digital-twin" target="file:skills/landscape-digital-twin/assets/manual-boundary.geojson"><data key="relation">contains</data></edge>
+    <edge id="e17" source="skill:landscape-digital-twin" target="file:skills/landscape-digital-twin/assets/site-request.example.json"><data key="relation">contains</data></edge>
+    <edge id="e18" source="skill:landscape-digital-twin" target="file:skills/landscape-digital-twin/assets/site-request.schema.json"><data key="relation">contains</data></edge>
+    <edge id="e19" source="skill:landscape-digital-twin" target="file:skills/landscape-digital-twin/references/acceptance-tests.md"><data key="relation">contains</data></edge>
+    <edge id="e20" source="skill:landscape-digital-twin" target="file:skills/landscape-digital-twin/references/architecture.md"><data key="relation">contains</data></edge>
+    <edge id="e21" source="skill:landscape-digital-twin" target="file:skills/landscape-digital-twin/references/changelog.md"><data key="relation">contains</data></edge>
+    <edge id="e22" source="skill:landscape-digital-twin" target="file:skills/landscape-digital-twin/references/layer-catalog.md"><data key="relation">contains</data></edge>
+    <edge id="e23" source="skill:landscape-digital-twin" target="file:skills/landscape-digital-twin/SKILL.md"><data key="relation">contains</data></edge>
+    <edge id="e24" source="skill:landscape-digital-twin" target="file:skills/landscape-digital-twin/VERSION"><data key="relation">contains</data></edge>
+    <edge id="e25" source="skill:web-security-quality-audit" target="concept:web-application"><data key="relation">audits</data></edge>
+    <edge id="e26" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/assets/audit.config.example.json"><data key="relation">contains</data></edge>
+    <edge id="e27" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/assets/report-template.md"><data key="relation">contains</data></edge>
+    <edge id="e28" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/references/control-catalog.md"><data key="relation">contains</data></edge>
+    <edge id="e29" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/references/severity-rubric.md"><data key="relation">contains</data></edge>
+    <edge id="e30" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/references/target-contract.md"><data key="relation">contains</data></edge>
+    <edge id="e31" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/SKILL.md"><data key="relation">contains</data></edge>
+    <edge id="e32" source="skill:web-security-quality-audit" target="file:skills/web-security-quality-audit/VERSION"><data key="relation">contains</data></edge>
+    <edge id="e33" source="skill:web-security-quality-audit" target="concept:project-audit-contract"><data key="relation">reads</data></edge>
   </graph>
 </graphml>
