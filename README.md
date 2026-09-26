@@ -2,13 +2,16 @@
 
 Version-controlled reusable skills for Permaculture Works software, operations, and design workflows.
 
-## Current skill
+## Current skills
 
-`skills/web-security-quality-audit/` — repeatable evidence-based web security, privacy, reliability, accessibility, performance, maintainability, and release-readiness auditing.
+- `skills/web-security-quality-audit/` — repeatable evidence-based web security, privacy, reliability, accessibility, performance, maintainability, and release-readiness auditing.
+- `skills/landscape-digital-twin/` — address- or GPS-bounded landscape digital twins with provenance-aware terrain, hydrology, soils, solar, earthworks, and permaculture analysis layers.
 
-The skill is reusable. Project-specific routes, URLs, provider settings, commands, and risk gates stay in the target repository.
+Skills are reusable. Project-specific routes, URLs, provider settings, commands, account details, and risk gates stay in the target repository.
 
-## Fast path
+## Fast paths
+
+### Web security quality audit
 
 ```text
 1. Read target AGENTS.md + audit.config.json.
@@ -16,6 +19,16 @@ The skill is reusable. Project-specific routes, URLs, provider settings, command
 3. Follow skills/web-security-quality-audit/SKILL.md.
 4. Use current source/CI/live evidence.
 5. Save a dated audit for future delta comparison.
+```
+
+### Landscape digital twin
+
+```text
+1. Follow skills/landscape-digital-twin/SKILL.md.
+2. Resolve an address or collect an adjustable manual GPS AOI.
+3. Keep the user AOI separate from the analysis buffer.
+4. Acquire/verify only the source data needed for requested layers.
+5. Return a portable site + layer manifest with provenance and uncertainty.
 ```
 
 ## Self-ontology

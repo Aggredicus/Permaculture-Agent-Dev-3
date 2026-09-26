@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:landscape-digital-twin:site-request:v0.1.0",
+  "title": "Landscape Digital Twin Site Request",
+  "type": "object",
+  "properties": {
+    "address": {"type": "string", "minLength": 1},
+    "manual_boundary": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["type", "center", "radius_m"],
+          "properties": {
+            "type": {"const": "center_radius"},
+            "center": {
+              "type": "array",
+              "prefixItems": [{"type": "number"}, {"type": "number"}],
+              "minItems": 2,
+              "maxItems": 2,
+              "description": "[longitude, latitude]"
+            },
+            "radius_m": {"type": "number", "exclusiveMinimum": 0}
+          }
+        },
+        {
+          "type": "object",
+          "required": ["type", "center", "width_m", "height_m"],
+          "properties": {
+            "type": {"const": "rectangle"},
+            "center": {
+              "type": "array",
+              "prefixItems": [{"type": "number"}, {"type": "number"}],
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "width_m": {"type": "number", "exclusiveMinimum": 0},
+            "height_m": {"type": "number", "exclusiveMinimum": 0},
+            "rotation_deg": {"type": "number", "default": 0}
+          }
+        },
+        {
+          "type": "object",
+          "required": ["type", "coordinates"],
+          "properties": {
+            "type": {"const": "polygon"},
+            "coordinates": {
+              "type": "array",
+              "minItems": 3,
+              "items": {
+                "type": "array",
+                "prefixItems": [{"type": "number"}, {"type": "number"}],
+                "minItems": 2,
+                "maxItems": 2
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["type", "geometry"],
+          "properties": {
+            "type": {"const": "geojson"},
+            "geometry": {"type": "object"}
+          }
+        }
+      ]
+    },
+    "analysis_buffer_m": {"type": "number", "minimum": 0, "default": 100},
+    "requested_layers": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "display_units": {"enum": ["metric", "imperial"], "default": "imperial"}
+  },
+  "anyOf": [
+    {"required": ["address"]},
+    {"required": ["manual_boundary"]}
+  ]
+}

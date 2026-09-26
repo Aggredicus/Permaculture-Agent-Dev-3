@@ -1,0 +1,19 @@
+{
+  "manual_boundary": {
+    "type": "rectangle",
+    "center": [-85.6681, 42.9634],
+    "width_m": 250,
+    "height_m": 250,
+    "rotation_deg": 0
+  },
+  "analysis_buffer_m": 100,
+  "requested_layers": [
+    "elevation",
+    "slope",
+    "aspect",
+    "contours",
+    "flow_accumulation",
+    "soils"
+  ],
+  "display_units": "imperial"
+}
