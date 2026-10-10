@@ -50,6 +50,11 @@
       "file:.github/workflows/validate-library.yml",
       "validates",
       "concept:repository-self-model"
+    ],
+    [
+      "skill:landscape-digital-twin",
+      "delegates-to",
+      "skill:terrain-site-analysis"
     ]
   ]
 }

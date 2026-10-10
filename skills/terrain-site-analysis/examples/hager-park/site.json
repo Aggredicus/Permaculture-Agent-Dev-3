@@ -1,0 +1,28 @@
+{
+  "id": "hager-park-8212-28th-ave",
+  "name": "Hager Park",
+  "official_address": "8212 28th Avenue, Jenison, Michigan 49428",
+  "township": "Georgetown Charter Township",
+  "county": "Ottawa County",
+  "state": "Michigan",
+  "reference_lat": 42.91721,
+  "reference_lon": -85.84874,
+  "reported_park_area_acres": 104,
+  "boundary_source_preference": "OSM way 158802227; community park boundary; approximate, not legally surveyed",
+  "osm_way_id": 158802227,
+  "candidate_county_parcel_pin": "70-14-09-400-001",
+  "candidate_parcel_validation": "Georgetown Township 2023 address report lists 8212 28th Ave, Ottawa County Parks, 70-14-09-400-001. This may not represent all park land.",
+  "reference_sources": [
+    "https://miottawa.org/park-locations/hager-park/",
+    "https://www.georgetown-mi.gov/DocumentCenter/View/7441/DC-ADDRESS-REPORT-PREV-YEAR",
+    "https://gis.miottawa.org/arcgis/rest/services/HostedServices/ParcelsPublic/FeatureServer/0",
+    "https://mapcarta.com/26961562",
+    "https://www.openstreetmap.org/way/158802227",
+    "https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer"
+  ],
+  "warnings": [
+    "Site is a public county park; contour analysis does not authorize earthmoving or modification.",
+    "The park's reported 104 acres may differ from OSM polygon area and county parcel geometry.",
+    "This package intentionally ships without measured elevation, slope, or cut/fill results until authentic USGS DEM data are fetched."
+  ]
+}

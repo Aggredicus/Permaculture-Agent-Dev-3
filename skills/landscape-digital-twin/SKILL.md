@@ -1,6 +1,6 @@
 ---
 name: landscape-digital-twin
-version: 0.1.0
+version: 0.2.0
 description: Build a provenance-aware landscape digital twin from an address or adjustable GPS boundary, then compute reusable geospatial analysis layers for regenerative and permaculture design.
 ---
 
@@ -190,3 +190,10 @@ When asked for the minimum useful implementation, build:
 6. elevation, slope, aspect, contours, flow accumulation, and soils;
 7. layer toggles, legends, and opacity;
 8. downloadable site/layer manifest with provenance.
+
+
+## Delegated four-layer terrain analysis
+
+When a request needs **elevation contours, numerical slope, downslope aspect, or illustrative cut/fill**, delegate calculation to the sibling `skills/terrain-site-analysis/SKILL.md` and its deterministic Python engine rather than maintaining duplicate algorithms. Pass through the established AOI and DEM provenance. Import only the resulting GeoTIFF/GeoJSON/KML and report metadata as terrain-derived digital-twin layers. Keep the user-selected polygon distinct from the analysis buffer; never promote an approximate park or screening boundary into surveyed parcel geometry. A missing real DEM means the terrain layer remains **Unverified**, not filled with synthetic samples.
+
+The public Hager Park workflow is a reproducible example, **not** a verified measured terrain dataset. No live download is implied by installing this integration.

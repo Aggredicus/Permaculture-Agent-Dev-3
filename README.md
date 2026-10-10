@@ -6,6 +6,7 @@ Version-controlled reusable skills for Permaculture Works software, operations, 
 
 - `skills/web-security-quality-audit/` — repeatable evidence-based web security, privacy, reliability, accessibility, performance, maintainability, and release-readiness auditing.
 - `skills/landscape-digital-twin/` — address- or GPS-bounded landscape digital twins with provenance-aware terrain, hydrology, soils, solar, earthworks, and permaculture analysis layers.
+- `skills/terrain-site-analysis/` — independently sourced DEM terrain contours, slope, aspect, and conceptual cut/fill; export GeoTIFF, GeoJSON, KML and reproducible reports (includes public Hager Park example).
 
 Skills are reusable. Project-specific routes, URLs, provider settings, commands, account details, and risk gates stay in the target repository.
 
@@ -30,6 +31,18 @@ Skills are reusable. Project-specific routes, URLs, provider settings, commands,
 4. Acquire/verify only the source data needed for requested layers.
 5. Return a portable site + layer manifest with provenance and uncertainty.
 ```
+
+### Terrain site analysis
+
+```text
+1. Follow skills/terrain-site-analysis/SKILL.md.
+2. Supply an address or coordinates; use an authoritative boundary when available.
+3. Retrieve USGS 3DEP or supply a real local DEM.
+4. Run four-layer analysis, retain provenance, export GeoTIFF/GeoJSON/KML.
+5. Never treat circular screening AOIs as legal parcels or illustrative cut/fill as an earthwork plan.
+```
+
+Public-site reproducibility example: `skills/terrain-site-analysis/examples/hager-park/`.
 
 ## Self-ontology
 
